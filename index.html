@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Messenger</h1>
+        <div class="header-buttons">
+            <button onclick="window.location.href='profile.html'">
+                <i class="fas fa-user"></i> Profile
+            </button>
+            <!-- <button><i class="fas fa-video"></i> Video</button> -->
+            <!-- <button><i class="fas fa-phone"></i> Audio</button> -->
+            <!-- <button><i class="fas fa-paperclip"></i> Attachments</button> -->
+        </div>
+    </div> 
+
+    <div class="body">
+        <div class="chat-container">
+            <div class="sidebar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search chats..." class="search-bar">
+                </div>
+                <div class="user-list">
+                    <div class="user-item active" onclick="openChat('Prashanth', 'pic2.png.jpg')">
+                        <img src="pic2.png.jpg" alt="User 1">
+                        <div class="user-info">
+                            <h3>Prashanth</h3>
+                            <p>Hello, how are you?</p>
+                        </div>
+                        <span class="time">12:30</span>
+                    </div>
+                    <div class="user-item" onclick="openChat('Bhavani', 'pic1.png.jpg')">
+                        <img src="pic1.png.jpg" alt="User 2">
+                        <div class="user-info">
+                            <h3>Bhavani</h3>
+                            <p>See you tomorrow!</p>
+                        </div>
+                        <span class="time">11:45</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-area">
+                <div class="chat-header">
+                    <div class="chat-user-info">
+                        <img src="pic3.png.jpg" alt="Current Chat">
+                        <h3>Chandu</h3>
+                    </div>
+                    <div class="chat-actions">
+                        <button><i class="fas fa-phone"></i></button>
+                        <button><i class="fas fa-video"></i></button>
+                        <button><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+                <div class="messages">
+                    <div class="message received">
+                        <p>Hey! How are you?</p>
+                        <span class="time">12:25</span>
+                    </div>
+                    <div class="message sent">
+                        <p>I'm good, thanks! How about you?</p>
+                        <span class="time">12:26</span>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <button><i class="fas fa-plus"></i></button>
+                    <input type="text" placeholder="Type a message...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openChat(userName, userImage) {
+            window.location.href = `Chat.html?user=${encodeURIComponent(userName)}&image=${encodeURIComponent(userImage)}`;
+        }
+    </script>
+</body>
+</html>
